@@ -1,0 +1,4 @@
+O(n)   // Best case: The array is already sorted
+O(n^2) // Average case: Average time complexity of Bubble sort
+O(n^2) // Worst case: Elements are in reverse order
+
