@@ -1,4 +1,4 @@
-O(n log n) // Best case: Balanced partitions
-O(n^2)     // Average case: Unbalanced partitions
-O(n^2)     // Worst case: Already sorted array or all elements are equal
+O(n)
+O(n^2)
+O(n^2)
 
