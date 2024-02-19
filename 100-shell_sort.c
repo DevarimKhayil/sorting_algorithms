@@ -9,34 +9,31 @@
  */
 void shell_sort(int *array, size_t size)
 {
-    size_t gap, i, j;
-    int temp;
+	size_t gap, i, j;
+	int temp;
 
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
 
-    /* Initialize the gap using Knuth sequence */
-    for (gap = 1; gap < size / 3; gap = gap * 3 + 1)
-        ;
+		return;
 
-    for (; gap > 0; gap /= 3)
-    {
-        for (i = gap; i < size; i++)
-        {
-            temp = array[i];
+	for (gap = 1; gap < size / 3; gap = gap * 3 + 1)
+		;
 
-            for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
-            {
-                /* Shift elements until the correct position is found */
-                array[j] = array[j - gap];
-            }
+	for (; gap > 0; gap /= 3)
+	{
+		for (i = gap; i < size; i++)
+		{
+			temp = array[i];
 
-            /* Place the current element in its correct position */
-            array[j] = temp;
+			for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
+			{
+				array[j] = array[j - gap];
+			}
 
-            /* Print the array after each decrease in interval (gap) */
-            print_array(array, size);
-        }
-    }
+			array[j] = temp;
+
+			print_array(array, size);
+		}
+	}
 }
 
